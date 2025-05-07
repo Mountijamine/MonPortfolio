@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">
+        <img src="assets/Flux_Dev_A_sleek_modern_logo_that_embodies_the_fusion_of_perso_1.jpg" alt="Logo" class="nav-logo">
+        Amine Mountij
+      </div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#profile">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Amine Mountij</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="assets/Amine.jpeg" alt="Amine Mountij profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section_text_p1">Hello, I'm</p>
+        <h1 class="title">Amine Mountij</h1>
+        <p class="section_text_p2">Software Engineer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/amine-mountij/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Mountijamine'"
+          />
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section - Compact Version -->
+    <section id="about">
+      <div class="about-container">
+        <div class="about-header">
+          <button class="about-button">ABOUT ME</button>
+          <h2 class="title">I'm Amine Mountij</h2>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-pic-container">
+            <img src="assets/Flux_Dev_A_sleek_modern_logo_that_embodies_the_fusion_of_perso_1.jpg" alt="Amine Mountij profile picture" />
+          </div>
+          <p class="about-text">
+            Amine Mountij, a fourth-year Computer Engineering student at EMSI. I am passionate about
+             software development,
+             with a strong interest in both mobile and web 
+             development. My goal is to continuously enhance my technical skills in order to contribute
+              to innovative projects and tackle 
+            the technological challenges of tomorrow.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="experience-container">
+        <div class="experience-header">
+          <button class="about-button">MY JOURNEY</button>
+          <h2 class="title">Experience & Education</h2>
+        </div>
+        
+        <div class="experience-grid">
+          <!-- Left Column - Education -->
+          <div class="experience-column">
+            <h3 class="experience-title">Education</h3>
+            
+            <div class="experience-item">
+              <span class="experience-date">2021 - 2026</span>
+              <h4 class="experience-role">Computer Engineering - Software Engineering</h4>
+              <p class="experience-org">
+                <span class="org-logo-wrapper">
+                  <img src="assets/ajax-document-loader.png" alt="EMSI logo" class="org-logo">
+                </span>
+                EMSI, Morocco
+              </p>
+              <p class="experience-desc">Currently pursuing engineering degree specialized in software development and digital technologies.</p>
+            </div>
+            
+            <div class="experience-item">
+              <span class="experience-date">2020 - 2021</span>
+              <h4 class="experience-role">Scientific Baccalaureate</h4>
+              <p class="experience-org">Majorelle Institute, Casablanca</p>
+              <p class="experience-desc">Physical Sciences option with advanced training in mathematics and sciences.</p>
+            </div>
+          </div>
+          
+          <!-- Right Column - Professional Experience -->
+          <div class="experience-column">
+            <h3 class="experience-title">Professional Experience</h3>
+            
+            <div class="experience-item">
+              <span class="experience-date">July 2024 - August 2024</span>
+              <h4 class="experience-role">Mobile Developer - Internship (2 months)</h4>
+              <p class="experience-org">
+                <span class="org-logo-wrapper">
+                  <img src="assets/ARIA.jpg" alt="ARIA logo" class="org-logo">
+                </span>
+                Aria Group, Casablanca
+              </p>
+              <p class="experience-desc">Design and development of a cross-platform mobile application (Flutter) for time and activity management. The application allows users to declare their tasks, working hours, absences and leaves, with real-time monitoring for managers.</p>
+              
+              <!-- Technology icons -->
+              <div class="tech-stack">
+                <div class="tech-stack-label">Technologies:</div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" title="Dart">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" title="Firebase">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" title="Android">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS" title="iOS">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+          
+    
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="projects-container">
+        <div class="projects-header">
+          <button class="about-button">MY WORK</button>
+          <h2 class="title">Recent Projects</h2>
+        </div>
+        
+      
+        
+        <div class="projects-grid">
+          <!-- Project Card 1 - World Cup 2030 Mobile App -->
+          <div class="project-card" data-category="mobile">
+            <div class="project-image">
+              <img src="assets/logomaroc2030.png" alt="World Cup 2030 Mobile App">
+              <div class="project-overlay">
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+            <h3 class="project-title">Mobile App for Tourists - World Cup 2030</h3>
+            <p class="project-category">Mobile App</p>
+            <div class="project-description">
+              <p>Design of a smart mobile application to assist visitors to Morocco during the 2030 World Cup. The application centralizes essential services: accommodation, food, transportation, guides, events, and emergencies.</p>
+              <div class="tech-stack">
+                <div class="tech-stack-label">Technologies:</div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" title="Firebase">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Card 2 - Sanady Charity App -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="assets/sanadyimage.jpg" alt="Sanady Charity Management App">
+              <div class="project-overlay">
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+            <h3 class="project-title">Charity Action Management Application - Sanady</h3>
+            <p class="project-category">Web Application</p>
+            <div class="project-description">
+              <p>Design and development of a web application in Java (Spring Boot) for managing charitable actions. Features include creating user and organization profiles, publishing initiatives, and managing online donations.</p>
+              <div class="tech-stack">
+                <div class="tech-stack-label">Technologies:</div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring" title="Spring">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Card 3 -->
+          <div class="project-card" data-category="digital">
+            <div class="project-image">
+              <img src="assets/TrueCare.png" alt="TrueCare mobile app">
+              <div class="project-overlay">
+                <a href="#" class="view-project">View Project</a>
+              </div>
+            </div>
+            <h3 class="project-title">Mobile Application for Motor Oil and Automotive Equipment - TrueCare</h3>
+            <p class="project-category">Mobile App</p>
+            <div class="project-description">
+              <p>Design of a mobile application facilitating the purchase of motor oil, filters, accessories, and vehicle tools. The application allows users to browse products, compare prices, and make purchases directly from their smartphone.</p>
+              <div class="tech-stack">
+                <div class="tech-stack-label">Technologies:</div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" title="Android">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java">
+                </div>
+                <div class="tech-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" title="Firebase">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Rest of your existing projects -->
+        </div>
+      </div>
+    </section>
+<section id="contact">
+  <p class="section_text_p1">Get in Touch</p>
+  <h1 class="title">Contact Me</h1>
+  <div class="contact-info-upper-container">
+    <div class="contact-info-container">
+      <img
+        src="./assets/email.png"
+        alt="Email icon"
+        class="icon contact-icon email-icon"
+      />
+      <p><a href="mailto:mountijamine.dev@gmail.com">mountijamine.dev@gmail.com</a></p>
+    </div>
+    <div class="contact-info-container">
+      <img
+        src="./assets/linkedin.png"
+        alt="LinkedIn icon"
+        class="icon contact-icon"
+      />
+      <p><a href="https://www.linkedin.com/in/amine-mountij/">LinkedIn</a></p>
+    </div>
+    
+    <div class="contact-info-container">
+      <img
+        src="assets/wtp.jpg"
+        alt="WhatsApp icon"
+        class="icon contact-icon"
+      />
+      <p><a href="0604890422">WhatsApp</a></p>
+    </div>
+  </div>
+</section>
+    <footer>
+  <div class="footer-container">
+    <div class="footer-logo-section">
+      <img src="assets/Flux_Dev_A_sleek_modern_logo_that_embodies_the_fusion_of_perso_1.jpg" alt="Amine Mountij Logo" class="footer-logo">
+    </div>
+    
+    <div class="footer-content">
+      <div class="footer-nav">
+        <ul class="nav-links">
+          <li><a href="#profile">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/amine-mountij/" class="social-link">
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://github.com/Mountijamine" class="social-link">
+          <img src="./assets/github.png" alt="GitHub" class="social-icon">
+        </a>
+        
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="divider"></div>
+      <p>Copyright &#169; 2023 Amine Mountij. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
