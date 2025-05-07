@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root {
+  /* Light mode variables (existing) */
   --primary: #1c2e42;
   --secondary: #3d5a7a;
   --accent: #0f1b2a;
@@ -15,6 +16,37 @@
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
   --transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
   --border-radius: 16px;
+  
+  /* Background colors */
+  --bg-primary: var(--light);
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(255, 255, 255, 0.3);
+  
+  /* Text colors */
+  --text-primary: var(--dark);
+  --text-secondary: #4a4a4a;
+  --text-light: #6c757d;
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: rgba(30, 30, 30, 0.8);
+  --border-color: rgba(80, 80, 80, 0.3);
+  
+  --text-primary: #f8faff;
+  --text-secondary: #e0e0e0;
+  --text-light: #a0a0a0;
+  
+  --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
+  
+  /* Slightly adjusted gradient for dark mode */
+  --gradient: linear-gradient(120deg, #2c4055, #5f7a99);
+  --accent-gradient: linear-gradient(120deg, #203547, #4d6680);
 }
 
 /* BASE STYLES */
@@ -26,10 +58,11 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -49,6 +82,7 @@ body::before {
               radial-gradient(circle at 80% 20%, rgba(0, 217, 255, 0.03), transparent 40%),
               radial-gradient(circle at 20% 80%, rgba(255, 100, 218, 0.03), transparent 40%);
   z-index: -2;
+  opacity: 0.5;
 }
 
 /* Custom scrollbar */
@@ -57,13 +91,13 @@ body::before {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--light);
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--primary), var(--secondary));
+  background: linear-gradient(var(--secondary), var(--primary));
   border-radius: 6px;
-  border: 3px solid var(--light);
+  border: 3px solid var(--bg-secondary);
 }
 
 /* NAVIGATION STYLES */
@@ -665,6 +699,41 @@ section {
   text-decoration: underline;
 }
 
+/* CONTACT SECTION - Update for better dark mode visibility */
+.dark-mode .contact-info-container {
+  background: white;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+/* Update the text color in dark mode contact section */
+.dark-mode .contact-info-container p {
+  color: var(--dark);
+}
+
+/* Make all contact links white background with dark text */
+.dark-mode .contact-info-container a {
+  color: var(--primary);
+}
+
+/* WhatsApp link - keep brand color but make it darker for white background */
+.dark-mode .contact-icon {
+  background: rgba(108, 99, 255, 0.15);
+}
+
+/* Specific styling for contact types on white background */
+.dark-mode a[href^="mailto:"] {
+  color: #f7f7f7 !important; /* Gmail-like red */
+}
+
+.dark-mode a[href^="https://www.linkedin"] {
+  color: #0A66C2 !important; /* LinkedIn blue */
+}
+
+.dark-mode a[href^="https://wa.me"] {
+  color: #25D366 !important; /* WhatsApp green */
+}
+
 /* FOOTER */
 footer {
   background-color: #1c2e42;
@@ -829,7 +898,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--light);
+  background-color: var(--bg-primary);
   position: relative;
   min-height: 70vh;
   padding: 6rem 5% 4rem;
@@ -926,7 +995,7 @@ footer {
   position: relative;
   padding: 6rem 5% 4rem;
   min-height: 80vh;
-  background-color: var(--light);
+  background-color: var(--bg-primary);
 }
 
 .experience-container {
@@ -1271,7 +1340,7 @@ footer {
 
 /* PROJECTS SECTION */
 #projects {
-  background-color: var(--light);
+  background-color: var(--bg-primary);
   padding: 6rem 5% 4rem;
   position: relative;
 }
@@ -1529,7 +1598,7 @@ footer {
 
 /* COMPETENCES SECTION - CLEAN INLINE STYLE */
 #competences {
-  background-color: var(--light);
+  background-color: var(--bg-primary);
   padding: 6rem 5% 4rem;
   position: relative;
 }
@@ -1968,5 +2037,250 @@ footer {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--dark);
+}
+
+/* DARK MODE STYLES */
+:root {
+  /* Light mode variables (existing) */
+  --primary: #1c2e42;
+  --secondary: #3d5a7a;
+  --accent: #0f1b2a;
+  --dark: #1a2533;
+  --light: #f8faff;
+  --gradient: linear-gradient(120deg, #1c2e42, #3d5a7a);
+  --accent-gradient: linear-gradient(120deg, #0f1b2a, #2c4055);
+  --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  --border-radius: 16px;
+  
+  /* Background colors */
+  --bg-primary: var(--light);
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(255, 255, 255, 0.3);
+  
+  /* Text colors */
+  --text-primary: var(--dark);
+  --text-secondary: #4a4a4a;
+  --text-light: #6c757d;
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: rgba(30, 30, 30, 0.8);
+  --border-color: rgba(80, 80, 80, 0.3);
+  
+  --text-primary: #f8faff;
+  --text-secondary: #e0e0e0;
+  --text-light: #a0a0a0;
+  
+  --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
+  
+  /* Slightly adjusted gradient for dark mode */
+  --gradient: linear-gradient(120deg, #2c4055, #5f7a99);
+  --accent-gradient: linear-gradient(120deg, #203547, #4d6680);
+}
+
+/* Update base elements to use the new variables */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode background effects */
+body.dark-mode::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.05), transparent 60%),
+              radial-gradient(circle at 80% 20%, rgba(0, 217, 255, 0.03), transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(255, 100, 218, 0.03), transparent 40%);
+  z-index: -2;
+  opacity: 0.5;
+}
+
+/* Navigation styles for dark mode */
+nav {
+  background-color: rgba(248, 250, 255, 0.9);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode nav {
+  background-color: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(80, 80, 80, 0.2);
+}
+
+.dark-mode .logo {
+  color: var(--text-primary);
+}
+
+.dark-mode .nav-links a {
+  color: var(--text-primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(108, 99, 255, 0.1);
+}
+
+.dark-mode .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  stroke: var(--text-primary);
+}
+
+.sun-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.moon-icon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
+.dark-mode .sun-icon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
+}
+
+.dark-mode .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Card backgrounds for dark mode */
+.dark-mode .project-card,
+.dark-mode .experience-item,
+.dark-mode .contact-info-container,
+.dark-mode .competence-category {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+/* Text colors for dark mode */
+.dark-mode p, 
+.dark-mode .project-title, 
+.dark-mode .experience-role,
+.dark-mode .about-text,
+.dark-mode .project-description {
+  color: var(--text-secondary);
+}
+
+.dark-mode .title {
+  background: linear-gradient(120deg, #5f7a99, #8fa3ba, #c0d0e0, #5f7a99);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer dark mode */
+.dark-mode footer {
+  background-color: #0a0a0a;
+}
+
+/* Technology icons background in dark mode */
+.dark-mode .tech-icon,
+.dark-mode .project-card .tech-icon {
+  background: rgba(40, 40, 40, 0.8);
+}
+
+/* Technology icons in project cards - dark mode improvements */
+.dark-mode .project-card .tech-icon {
+  background: rgba(60, 60, 70, 0.6);
+  border: 1px solid rgba(100, 100, 120, 0.4);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .project-card .tech-icon img {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+.dark-mode .project-card .tech-icon:hover {
+  background: rgba(80, 90, 110, 0.7);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(30, 60, 90, 0.3);
+  border-color: rgba(120, 140, 180, 0.5);
+}
+
+/* Technology stack label in dark mode */
+.dark-mode .project-card .tech-stack-label {
+  color: #a0b0c0;
+}
+
+/* Technology stack border in dark mode */
+.dark-mode .project-card .tech-stack {
+  border-top: 1px solid rgba(100, 120, 150, 0.2);
+}
+
+/* White CV download button in dark mode */
+.dark-mode .btn-color-2,
+.dark-mode a[href$=".pdf"],
+.dark-mode .download-cv {
+  background-color: #8ea2b8; /* Professional blue */
+  color: rgb(42, 42, 45);
+  border-color: #3d5a7a;
+}
+
+.dark-mode .btn-color-2:hover,
+.dark-mode a[href$=".pdf"]:hover,
+.dark-mode .download-cv:hover {
+  background-color: #4d6b8c; /* Lighter blue on hover */
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* If your CV button is a different style (outlined), use this instead */
+.dark-mode .btn-color-1.download-cv {
+  background: white;
+  color: #121212;
+  border-color: white;
+}
+
+.dark-mode .btn-color-1.download-cv:hover {
+  background: #f0f0f0;
+  color: #121212;
+  border-color: #f0f0f0;
+}
+
+/* Add white glow effect on hover */
+.dark-mode .download-cv:hover {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
 }
 
