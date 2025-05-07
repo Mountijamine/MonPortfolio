@@ -28,41 +28,40 @@ document.addEventListener('click', function(event) {
   }
 });
 
-// Dark mode toggle functionality
-function toggleTheme(event) {
-  // Prevent menu toggle when clicking theme button on mobile
-  if (event) {
-    event.stopPropagation();
-  }
-  
-  const body = document.body;
-  const isDarkMode = body.classList.toggle('dark-mode');
+// Function to toggle dark mode
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
   
   // Save preference to localStorage
-  localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDarkMode);
+  
+  // Update aria-label for accessibility
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  themeToggles.forEach(button => {
+    button.setAttribute('aria-label', isDarkMode ? 'Toggle light mode' : 'Toggle dark mode');
+  });
 }
 
-// Check for saved theme preference and apply it
-function applyThemePreference() {
-  const savedTheme = localStorage.getItem('darkMode');
+// Check for saved user preference
+document.addEventListener('DOMContentLoaded', () => {
+  // Check if user has a saved preference
+  const savedDarkMode = localStorage.getItem('darkMode');
   
-  if (savedTheme === 'enabled') {
+  // Apply dark mode if saved preference exists
+  if (savedDarkMode === 'true') {
     document.body.classList.add('dark-mode');
   }
-}
+  
+  // Add event listeners to all theme toggle buttons
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  themeToggles.forEach(button => {
+    button.addEventListener('click', toggleDarkMode);
+  });
 
-// Initialize theme
-document.addEventListener('DOMContentLoaded', () => {
-  // Apply saved preference
-  applyThemePreference();
-  
-  // Add event listeners to theme toggles
-  const desktopToggle = document.getElementById('theme-toggle');
-  const mobileToggle = document.getElementById('mobile-theme-toggle');
-  
-  if (desktopToggle) {
-    desktopToggle.addEventListener('click', toggleTheme);
-  }
-  
-  // The mobile toggle already has the event handler in the HTML
+  // Fix for mobile menu toggle to prevent toggling theme
+  document.getElementById('mobile-theme-toggle').onclick = (e) => {
+    e.stopPropagation();
+    toggleDarkMode();
+  };
 });
